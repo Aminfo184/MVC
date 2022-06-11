@@ -15,4 +15,12 @@ trait View {
         else
         echo "this view [".$dir."] not exist";
     }
+
+    protected function asset($dir)
+    {
+        global $base_url;
+        $path = $base_url . "public/" . $dir;
+        echo $path;
+    }
+
 }
