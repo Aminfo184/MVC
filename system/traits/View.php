@@ -36,4 +36,12 @@ trait View {
             echo "this view [" . $dir . "] not exist";
     }
 
+    protected function url($url)
+    {
+        if ($url[0] == '/') {
+            $url = substr($url, 1, strlen($url) - 1);
+        }
+        global $base_url;
+        echo $base_url . $url;
+    }
 }
